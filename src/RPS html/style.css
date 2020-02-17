@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkseagreen;
+}
+
+.titel{
+    color: darkturquoise;
+    font-family: 'Kalam', cursive;
+    font-size: 50px;
+    text-shadow: 2px 2px 8px yellow;
+}
+
+.column1 {
+    float: left;
+    width: 30%;
+    padding-left: 150px; 
+}
+
+.column2 {
+    float: left;
+    width: 30%; 
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.input {
+    width: 140px;
+    height: 40px;
+    font-size: 15px;
+    color: black;
+    background-color: lightgrey;
+}
+
+.input:hover {
+    background-color: darkturquoise;
+    color: black;
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

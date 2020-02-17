@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="description" content="Rock Paper Scissors Game">
+	<meta name="author" content="Gosia Pick">
+	<title>Rock Paper Scissors Game - Player vs Comp</title>
+
+	<link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+<center>
+<h1 class="titel">Rock Paper Scissors - Player vs Computer</h1>
+<br>   
+<div class="row">
+    <div class="column1">
+        <img src="rps.gif" />
+    </div>
+    <div class="column2">
+        <!-- Changed method from "post" to "get", changed ROCK to rock itd. -->
+        <form action = "http://localhost:8080/scores/playerVsComp" method="get">
+            <input class="input" type="submit" name="getPlayerChoice" value="rock"><br><br>
+            <input class="input" type="submit" name="getPlayerChoice" value="paper"><br><br>
+            <input class="input" type="submit" name="getPlayerChoice" value="scissors"><br><br>
+        </form>
+        <br><br>
+        <form action = "http://localhost:8080/scores" method="get">
+            <input class="input" type="submit" value="SCORES"> 
+        </form>
+        <br><br>
+        <form action = "http://localhost:8080/reset" method="post">
+            <input type="hidden" name="resetValue" value="0">
+            <input class="input" type="submit" value="RESET GAME"><br><br>
+        </form>
+        <br>
+    </div>
+ </div>
+</center>    
+</body>
+</html>
