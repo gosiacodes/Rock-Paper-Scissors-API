@@ -4,72 +4,43 @@ import java.io.IOException;
 
 public class WhoIsTheWinner {
 	
-	// Method for winner in Player vs Player Game
-	public static String theWinnerIsPvP(String player1Choice, String player2Choice) throws IOException {
-	    String winner = "The other player is not ready yet. Refresh the page in a while.";
+	// Method for winner 
+	public static String theWinnerIs(String player1Choice, String player2Choice, String gameId) throws IOException {
+	    String winner = "Not ready. Refresh page in a while.";
+	    String rock = "rock";
+		String paper = "paper";
+		String scissors = "scissors";
 		
 	    if (player1Choice.equals(player2Choice) || player2Choice.equals(player1Choice)) {
-			winner = "Player 1 and Player 2 - score draw.";
-			IncreaseScores.increaseTies();
-		}	    
-		else if (player1Choice.equals(ScoreBean.ROCK) && player2Choice.equals(ScoreBean.PAPER)) {
-			winner = "Player 2 winns.";
-			IncreaseScores.increaseScoresPlayer2();
+	    	if (gameId == "PVP") {
+	    		winner = "It´s score draw.<br><br>Player 1: " + player1Choice + "<br><br>Player 2: " + player2Choice;
+	    	}
+	    	else if (gameId == "PVC") {
+	    		winner = "It´s score draw.<br><br>You: " + player1Choice + "<br><br>Computer: " + player2Choice;
+	    	}
+	    	RPS.increaseTies();
 		}
-		else if (player1Choice.equals(ScoreBean.ROCK) && player2Choice.equals(ScoreBean.SCISSORS)) {
-			winner = "Player 1 winns.";
-			IncreaseScores.increaseScoresPlayer1();
+		else if (player1Choice.equals(rock) && player2Choice.equals(scissors) || 
+				player1Choice.equals(paper) && player2Choice.equals(rock) || 
+				player1Choice.equals(scissors) && player2Choice.equals(paper)) {
+			if (gameId == "PVP") {
+				winner = "Player 1 winns.<br><br>Player 1: " + player1Choice + "<br><br>Player 2: " + player2Choice;
+			}
+			else if (gameId == "PVC") {
+				winner = "You win.<br><br>You: " + player1Choice + "<br><br>Computer: " + player2Choice;
+			}
+			RPS.increaseScoresPlayer1();
 		}
-		else if (player1Choice.equals(ScoreBean.PAPER) && player2Choice.equals(ScoreBean.ROCK)) {
-			winner = "Player 1 winns.";
-			IncreaseScores.increaseScoresPlayer1();
-		}
-		else if (player1Choice.equals(ScoreBean.PAPER) && player2Choice.equals(ScoreBean.SCISSORS)) {
-			winner = "Player 2 winns.";
-			IncreaseScores.increaseScoresPlayer2();
-		}
-		else if (player1Choice.equals(ScoreBean.SCISSORS) && player2Choice.equals(ScoreBean.ROCK)) {
-			winner = "Player 2 winns.";
-			IncreaseScores.increaseScoresPlayer2();
-		}
-		else if (player1Choice.equals(ScoreBean.SCISSORS) && player2Choice.equals(ScoreBean.PAPER)) {
-			winner = "Player 1 winns.";
-			IncreaseScores.increaseScoresPlayer1();
-		}	
-		return winner;
-	}
-	
-	// Method for winner in Player vs Computer Game
-	public static String theWinnerIsPvC(String playerChoice, String compChoice) throws IOException {
-	    String winner = "";
-	    
-	    if (playerChoice.equals(compChoice) || compChoice.equals(playerChoice)) {
-			winner = "Player and Computer - score draw.";
-			IncreaseScores.increaseTies();
-		}	    
-		else if (playerChoice.equals(ScoreBean.ROCK) && compChoice.equals(ScoreBean.PAPER)) {
-			winner = "Computer winns.";
-			IncreaseScores.increaseScoresPlayer2();
-		}
-		else if (playerChoice.equals(ScoreBean.ROCK) && compChoice.equals(ScoreBean.SCISSORS)) {
-			winner = "Player winns.";
-			IncreaseScores.increaseScoresPlayer1();
-		}
-		else if (playerChoice.equals(ScoreBean.PAPER) && compChoice.equals(ScoreBean.ROCK)) {
-			winner = "Player winns.";
-			IncreaseScores.increaseScoresPlayer1();
-		}
-		else if (playerChoice.equals(ScoreBean.PAPER) && compChoice.equals(ScoreBean.SCISSORS)) {
-			winner = "Computer winns.";
-			IncreaseScores.increaseScoresPlayer2();
-		}
-		else if (playerChoice.equals(ScoreBean.SCISSORS) && compChoice.equals(ScoreBean.ROCK)) {
-			winner = "Computer winns.";
-			IncreaseScores.increaseScoresPlayer2();
-		}
-		else if (playerChoice.equals(ScoreBean.SCISSORS) && compChoice.equals(ScoreBean.PAPER)) {
-			winner = "Player winns.";
-			IncreaseScores.increaseScoresPlayer1();
+		else if (player1Choice.equals(rock) && player2Choice.equals(paper) ||
+				player1Choice.equals(paper) && player2Choice.equals(scissors) ||
+				player1Choice.equals(scissors) && player2Choice.equals(rock)) {
+			if (gameId == "PVP") {
+				winner = "Player 2 winns.<br><br>Player 1: " + player1Choice + "<br><br>Player 2: " + player2Choice;
+			}
+			else if (gameId == "PVC") {
+				winner = "Computer winns.<br><br>You: " + player1Choice + "<br><br>Computer: " + player2Choice;
+			}
+			RPS.increaseScoresPlayer2();
 		}
 		return winner;
 	}
