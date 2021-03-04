@@ -24,7 +24,7 @@ public class WhoIsTheWinner {
 				player1Choice.equals(paper) && player2Choice.equals(rock) || 
 				player1Choice.equals(scissors) && player2Choice.equals(paper)) {
 			if (gameId == "PVP") {
-				winner = "Player 1 winns.<br><br>Player 1: " + player1Choice + "<br><br>Player 2: " + player2Choice;
+				winner = "Player 1 wins.<br><br>Player 1: " + player1Choice + "<br><br>Player 2: " + player2Choice;
 			}
 			else if (gameId == "PVC") {
 				winner = "You win.<br><br>You: " + player1Choice + "<br><br>Computer: " + player2Choice;
@@ -35,10 +35,10 @@ public class WhoIsTheWinner {
 				player1Choice.equals(paper) && player2Choice.equals(scissors) ||
 				player1Choice.equals(scissors) && player2Choice.equals(rock)) {
 			if (gameId == "PVP") {
-				winner = "Player 2 winns.<br><br>Player 1: " + player1Choice + "<br><br>Player 2: " + player2Choice;
+				winner = "Player 2 wins.<br><br>Player 1: " + player1Choice + "<br><br>Player 2: " + player2Choice;
 			}
 			else if (gameId == "PVC") {
-				winner = "Computer winns.<br><br>You: " + player1Choice + "<br><br>Computer: " + player2Choice;
+				winner = "Computer wins.<br><br>You: " + player1Choice + "<br><br>Computer: " + player2Choice;
 			}
 			RPS.increaseScoresPlayer2();
 		}

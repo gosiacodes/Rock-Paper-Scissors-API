@@ -11,32 +11,40 @@
 
 </head>
 <body>
-<center>
-<h1 class="titel">Rock Paper Scissors - Player 1</h1>
-<br>   
-<div class="row">
-    <div class="column1">
-        <img src="rps.gif" />
-    </div>
-    <div class="column2">
-        <!-- Changed method from "post" to "get", changed ROCK to rock itd. -->
-        <form action = "http://localhost:8080/scores/player1" method="get">
-            <input class="input" type="submit" name="getPlayer1Choice" value="rock"><br><br>
-            <input class="input" type="submit" name="getPlayer1Choice" value="paper"><br><br>
-            <input class="input" type="submit" name="getPlayer1Choice" value="scissors"><br><br>
-        </form>
-        <br><br>
-        <form action = "http://localhost:8080/scores" method="get">
-            <input class="input" type="submit" value="SCORES"> 
-        </form>
-        <br><br>
-        <form action = "http://localhost:8080/reset" method="post">
-            <input type="hidden" name="resetValue" value="0">
-            <input class="input" type="submit" name="" value="RESET GAME"><br><br>
-        </form>
-        <br>
-    </div>
- </div>
-</center>    
+    <center>
+        <h1 class="titel">Rock Paper Scissors - Player 1</h1>
+        <br>   
+        <div class="row">
+            <div class="column1">
+                <img src="rps.gif" class="responsive"/>
+            </div>
+            <div class="column2">
+                <!-- Changed method from "post" to "get", changed ROCK to rock itd. -->
+                <form action = "http://localhost:8080/scores/player1" method="get">
+                    <div class="row-buttons2">
+                        <input class="input" type="submit" name="getPlayer1Choice" value="rock">
+                    </div>
+                    <div class="row-buttons2">
+                        <input class="input" type="submit" name="getPlayer1Choice" value="paper">
+                    </div>
+                    <div class="row-buttons2">
+                        <input class="input" type="submit" name="getPlayer1Choice" value="scissors">
+                    </div>
+                </form>
+                <br>
+                <form action = "http://localhost:8080/scores" method="get">
+                    <div class="row-buttons2">
+                        <input class="input" type="submit" value="SCORES"> 
+                    </div>
+                </form>
+                <form action = "http://localhost:8080/reset" method="post">
+                    <div class="row-buttons2">
+                        <input type="hidden" name="resetValue" value="0">
+                        <input class="input" type="submit" name="" value="RESET GAME">
+                    </div>
+                </form>
+            </div>
+         </div>
+    </center>    
 </body>
 </html>
