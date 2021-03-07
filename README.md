@@ -1,6 +1,9 @@
 # Uppgift2RPSAPI
 "Rock Paper Scissors" API for 2 players or player vs computer - school project for Java Web Services course (2020)
 
+Documentation:
+https://documenter.getpostman.com/view/10422612/SzKTvdw3?version=latest
+
 HTML:
 
 ![RPS 1](/images/RPS1.png)
